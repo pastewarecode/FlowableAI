@@ -1,2 +1,2 @@
 # FlowableAI
-FlowableAI business repository for temporary pages.
+FlowableAI business repository for temporary webpages.
