@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | FlowableAI</title>
+<meta name="description" content="How FlowableAI collects, uses, and protects personal information, including data accessed through Google APIs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome brand icons (used for the Instagram link in the footer) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/brands.min.css">
+<style>
+  /* Design tokens: keep in sync with index.html */
+  :root {
+    --bg: #232323;
+    --bg-deep: #1c1c1c;
+    --text: #FFFFFF;
+    --body: rgba(255, 255, 255, 0.80);
+    --muted: rgba(255, 255, 255, 0.70);
+    --faint: rgba(255, 255, 255, 0.45);
+    --line: rgba(255, 255, 255, 0.10);
+    --accent: #E27E36;
+    --accent-soft: rgba(226, 126, 54, 0.14);
+    --card-text: #232323;
+    --radius: 14px;
+    --serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+    --sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 16px; line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  [id] { scroll-margin-top: 88px; }
+
+  /* ---------- Header (same as index.html) ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(35, 35, 35, 0.85);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: var(--serif); font-size: 26px; line-height: 1; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
+  .brand span { color: var(--accent); }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a.link { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+  nav a.link:hover { color: var(--text); }
+  .nav-cta {
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    color: var(--accent); border: 1.5px solid var(--accent);
+    padding: 8px 18px; border-radius: 999px; transition: background .15s ease, color .15s ease;
+  }
+  .nav-cta:hover { background: var(--accent); color: var(--card-text); }
+
+  /* ---------- Page title band ---------- */
+  .page-hero {
+    background:
+      radial-gradient(60% 90% at 85% 0%, rgba(226, 126, 54, 0.22) 0%, rgba(226, 126, 54, 0) 70%),
+      linear-gradient(180deg, #232323 0%, #1f1f1f 100%);
+    border-bottom: 1px solid var(--line);
+    padding: 72px 0 56px;
+  }
+  .label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  .page-hero h1 { font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 1.12; margin: 0 0 12px; }
+  .updated { color: var(--faint); font-size: 14px; margin: 0; }
+
+  /* ---------- Policy body ---------- */
+  .policy { max-width: 760px; margin: 0 auto; padding: 56px 0 88px; }
+  .policy h2 {
+    font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.25;
+    margin: 48px 0 14px; padding-top: 36px; border-top: 1px solid var(--line);
+  }
+  .policy > h2:first-of-type { margin-top: 40px; }
+  .policy h3 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; }
+  .policy p { color: var(--body); margin: 0 0 16px; }
+  .policy ul { color: var(--body); margin: 0 0 18px; padding-left: 22px; }
+  .policy li { margin-bottom: 8px; }
+  .policy li::marker { color: var(--accent); }
+  .policy strong { color: var(--text); font-weight: 600; }
+  .policy a { color: var(--accent); text-underline-offset: 3px; }
+  .highlight {
+    margin: 48px 0; padding: 4px 28px 14px;
+    background: rgba(226, 126, 54, 0.07);
+    border: 1px solid rgba(226, 126, 54, 0.30); border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+  }
+  .policy .highlight h2 { border-top: 0; padding-top: 0; margin-top: 24px; }
+
+  /* ---------- Footer (same as index.html) ---------- */
+  footer { border-top: 1px solid var(--line); background: var(--bg-deep); padding: 56px 0 36px; font-size: 14px; color: var(--muted); line-height: 1.65; }
+  .foot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 240px)); gap: 32px 64px; margin-bottom: 40px; }
+  .foot-grid h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); margin: 0 0 14px; }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; }
+  .foot-grid li { margin-bottom: 8px; }
+  .foot-grid a { text-decoration: none; color: var(--muted); }
+  .foot-grid a:hover { color: var(--accent); }
+  .foot-bottom { border-top: 1px solid var(--line); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--faint); font-size: 13px; }
+  .social {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); color: var(--muted); text-decoration: none;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .social:hover { color: var(--accent); border-color: var(--accent); }
+  .social i { font-size: 17px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 720px) {
+    nav a.link { display: none; }
+    .page-hero { padding: 52px 0 40px; }
+    .page-hero h1 { font-size: 38px; }
+    .policy { padding: 40px 0 64px; }
+    .policy h2 { font-size: 24px; }
+    .highlight { padding: 4px 20px 10px; }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .brand { font-size: 23px; }
+    .nav-cta { padding: 7px 14px; font-size: 13px; }
+    body { font-size: 15.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="FlowableAI home">Flowable<span>AI</span></a>
+    <nav aria-label="Main">
+      <a class="link" href="./#how">How we work</a>
+      <a class="link" href="./#solutions">Solutions</a>
+      <a class="link" href="./#faq">FAQ</a>
+      <a class="nav-cta" href="https://calendly.com/flowableai/discovery-call" target="_blank" rel="noopener noreferrer">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= TITLE ================= -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Updated: November 8, 2026</p>
+  </div>
+</section>
+
+<!-- ================= POLICY TEXT (source of truth: Cody's Google Drive policy doc) ================= -->
+<div class="wrap">
+<article class="policy">
+<p>FlowableAI (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by FlowableAI.</p>
+
+<p>This Privacy Policy applies to our website, and its associated subdomains (collectively, our &ldquo;Service&rdquo;) alongside our application, FlowableAI. By accessing or using our Service, you signify that you have read, understood, and agree to our collection, storage, use, and disclosure of your personal information as described in this Privacy Policy and our Terms of Service.</p>
+
+<h2>Definitions and key terms</h2>
+
+<p>To help explain things as clearly as possible in this Privacy Policy, every time any of these terms are referenced, they are strictly defined as:</p>
+
+<ul>
+<li><strong>Cookie:</strong> small amount of data generated by a website and saved by your web browser. It is used to identify your browser, provide analytics, remember information about you such as your language preference or login information.</li>
+<li><strong>Company:</strong> when this policy mentions &ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our,&rdquo; it refers to FlowableAI, that is responsible for your information under this Privacy Policy.</li>
+<li><strong>Country:</strong> where FlowableAI or the owners/founders of FlowableAI are based, in this case is Canada.</li>
+<li><strong>Customer:</strong> refers to the company, organization or person that signs up to use the FlowableAI Service to manage the relationships with your consumers or service users.</li>
+<li><strong>Device:</strong> any internet connected device such as a phone, tablet, computer or any other device that can be used to visit FlowableAI and use the services.</li>
+<li><strong>Google user data:</strong> information obtained from a Google account through Google APIs, such as Google Drive, when that account is connected to FlowableAI's tools.</li>
+<li><strong>IP address:</strong> Every device connected to the Internet is assigned a number known as an Internet protocol (IP) address. These numbers are usually assigned in geographic blocks. An IP address can often be used to identify the location from which a device is connecting to the Internet.</li>
+<li><strong>Personnel:</strong> refers to those individuals who are employed by FlowableAI or are under contract to perform a service on behalf of one of the parties.</li>
+<li><strong>Personal Data:</strong> any information that directly, indirectly, or in connection with other information &mdash; including a personal identification number &mdash; allows for the identification or identifiability of a natural person.</li>
+<li><strong>Service:</strong> refers to the service provided by FlowableAI as described in the relative terms (if available) and on this platform.</li>
+<li><strong>Third-party service:</strong> refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you.</li>
+<li><strong>Website:</strong> FlowableAI&rsquo;s site, including this page and any domain FlowableAI operates.</li>
+<li><strong>You:</strong> a person or entity that is registered with FlowableAI to use the Services.</li>
+</ul>
+
+<h2>What Information Do We Collect?</h2>
+
+<p>We collect information from you when you visit our website or fill out a consultation request form.</p>
+
+<ul>
+<li>Name / Username</li>
+<li>Phone Numbers</li>
+<li>Email Addresses</li>
+<li>Job Titles</li>
+<li>Company Information</li>
+</ul>
+
+<h2>When does FlowableAI use end user information from third parties?</h2>
+
+<p>FlowableAI will collect End User Data necessary to provide the FlowableAI services to our customers. End users may voluntarily provide us with information they have made available on social media websites. If you provide us with any such information, we may collect publicly available information from the social media websites you have indicated. You can control how much of your information social media websites make public by visiting these websites and changing your privacy settings.</p>
+
+<h2>When does FlowableAI use customer information from third parties?</h2>
+
+<p>We receive some information from third parties when you contact us. For example, when you submit your email address to us to show interest in becoming a FlowableAI customer, we receive information from a third party that provides automated fraud detection services to FlowableAI. We also occasionally collect information that is made publicly available on social media websites. You can control how much of your information social media websites make public by visiting these websites and changing your privacy settings.</p>
+
+<h2>Do we share the information we collect with third parties?</h2>
+
+<p>We may share the information that we collect, both personal and non-personal, with third parties such as advertisers, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you. We may also share it with our current and future affiliated companies and business partners, and if we are involved in a merger, asset sale or other business reorganization, we may also share or transfer your personal and non-personal information to our successors-in-interest. This section does not apply to Google user data, which is never shared for these purposes (see &ldquo;Google User Data&rdquo; below).</p>
+
+<p>We may engage trusted third party service providers to perform functions and provide services to us, such as hosting and maintaining our servers and the website, database storage and management, e-mail management, storage marketing, customer service and fulfilling orders for products and services you may purchase through the website. We will likely share your personal information, and possibly some non-personal information, with these third parties to enable them to perform these services for us and for you.</p>
+
+<p>We may share portions of our log file data, including IP addresses, for analytics purposes with third parties such as web analytics partners, application developers, and ad networks. If your IP address is shared, it may be used to estimate general location and other technographics such as connection speed, whether you have visited the website in a shared location, and type of the device used to visit the website. They may aggregate information about our advertising and what you see on the website and then provide auditing, research and reporting for us and our advertisers.</p>
+
+<p>We may also disclose personal and non-personal information about you to government or law enforcement officials or private parties as we, in our sole discretion, believe necessary or appropriate in order to respond to claims, legal process (including subpoenas), to protect our rights and interests or those of a third party, the safety of the public or any person, to prevent or stop any illegal, unethical, or legally actionable activity, or to otherwise comply with applicable court orders, laws, rules and regulations.</p>
+
+<h2>Where and when is information collected from customers and end users?</h2>
+
+<p>FlowableAI will collect personal information that you submit to us. We may also receive personal information about you from third parties as described above.</p>
+
+<h2>How Do We Use The Information We Collect?</h2>
+
+<p>Any of the information we collect from you may be used in one of the following ways:</p>
+
+<ul>
+<li>To personalize your experience (your information helps us to better respond to your individual needs)</li>
+<li>To improve our website (we continually strive to improve our website offerings based on the information and feedback we receive from you)</li>
+<li>To improve customer service (your information helps us to more effectively respond to your customer service requests and support needs)</li>
+<li>To process transactions</li>
+<li>To send periodic emails</li>
+</ul>
+
+<div class="highlight" id="google-user-data">
+<h2>Google User Data</h2>
+<p>FlowableAI&rsquo;s internal automation tools may connect to Google services, such as Google Drive, using Google&rsquo;s OAuth sign-in. These tools are used by FlowableAI to operate its own business. When connected, they create and store documents, such as research reports, in the connected Google Drive account.</p>
+<p><strong>What we access:</strong> only the Google data needed to create and manage those documents in the connected account.</p>
+<p><strong>How we use it:</strong> solely to provide that document creation and storage function. Google user data is not used for any other purpose.</p>
+<p><strong>Sharing:</strong> we do not sell Google user data, share it with third parties, or use it for advertising, remarketing, audience targeting, or to build user profiles. This applies regardless of anything stated elsewhere in this Privacy Policy.</p>
+<p><strong>Storage and retention:</strong> documents remain in the connected Google account, where the account owner controls access and can delete them at any time.</p>
+<p><strong>Revoking access:</strong> you can revoke FlowableAI&rsquo;s access at any time from your Google Account&rsquo;s security settings, under &ldquo;Third-party apps with account access.&rdquo;</p>
+<p>FlowableAI&rsquo;s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+</div>
+
+<h2>How Do We Use Your Email Address?</h2>
+
+<p>By submitting your email address on this website, you agree to receive emails from us. You can cancel your participation in any of these email lists at any time by clicking on the opt-out link or other unsubscribe option that is included in the respective email. We only send emails to people who have authorized us to contact them, either directly, or through a third party. We do not send unsolicited commercial emails, because we hate spam as much as you do. By submitting your email address, you also agree to allow us to use your email address for customer audience targeting on sites like Facebook, where we display custom advertising to specific people who have opted-in to receive communications from us. Email addresses submitted only through the order processing page will be used for the sole purpose of sending you information and updates pertaining to your order. If, however, you have provided the same email to us through another method, we may use it for any of the purposes stated in this Policy. Note: If at any time you would like to unsubscribe from receiving future emails, we include detailed unsubscribe instructions at the bottom of each email.</p>
+
+<h2>How Long Do We Keep Your Information?</h2>
+
+<p>We keep your information only so long as we need it to provide FlowableAI to you and fulfill the purposes described in this policy. This is also the case for anyone that we share your information with and who carries out services on our behalf. When we no longer need to use your information and there is no need for us to keep it to comply with our legal or regulatory obligations, we&rsquo;ll either remove it from our systems or depersonalize it so that we can&rsquo;t identify you.</p>
+
+<h2>How Do We Protect Your Information?</h2>
+
+<p>We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information through our Service.</p>
+
+<p>FlowableAI does not directly collect, process, or store payment information. All financial transactions are conducted via third-party payment processors under written contract, in accordance with applicable payment security standards. We do not have access to your full payment details, and we do not retain any payment information on our systems.</p>
+
+<p>We cannot, however, ensure or warrant the absolute security of any information you transmit to FlowableAI or guarantee that your information on the Service may not be accessed, disclosed, altered, or destroyed by a breach of any of our physical, technical, or managerial safeguards.</p>
+
+<h2>Could my information be transferred to other countries?</h2>
+
+<p>FlowableAI is incorporated in Canada. Information collected via our website, through direct interactions with you, or from use of our help services may be transferred from time to time to our offices or personnel, or to third parties, located throughout the world, and may be viewed and hosted anywhere in the world, including countries that may not have laws of general applicability regulating the use and transfer of such data. To the fullest extent allowed by applicable law, by using any of the above, you voluntarily consent to the trans-border transfer and hosting of such information.</p>
+
+<h2>Is the information collected through the FlowableAI Service secure?</h2>
+
+<p>We take precautions to protect the security of your information. We have physical, electronic, and managerial procedures to help safeguard, prevent unauthorized access, maintain data security, and correctly use your information. However, neither people nor security systems are foolproof, including encryption systems. In addition, people can commit intentional crimes, make mistakes or fail to follow policies. Therefore, while we use reasonable efforts to protect your personal information, we cannot guarantee its absolute security. If applicable law imposes any non-disclaimable duty to protect your personal information, you agree that intentional misconduct will be the standards used to measure our compliance with that duty.</p>
+
+<h2>Can I update or correct my information?</h2>
+
+<p>The rights you have to request updates or corrections to the information FlowableAI collects depend on your relationship with FlowableAI. Personnel may update or correct their information as detailed in our internal company employment policies.</p>
+
+<p>Customers have the right to request the restriction of certain uses and disclosures of personally identifiable information as follows. You can contact us in order to (1) update or correct your personally identifiable information, (2) change your preferences with respect to communications and other information you receive from us, or (3) delete the personally identifiable information maintained about you on our systems (subject to the following paragraph), by cancelling your account. Such updates, corrections, changes and deletions will have no effect on other information that we maintain, or information that we have provided to third parties in accordance with this Privacy Policy prior to such update, correction, change or deletion. To protect your privacy and security, we may take reasonable steps (such as requesting a unique password) to verify your identity before granting you profile access or making corrections. You are responsible for maintaining the secrecy of your unique password and account information at all times.</p>
+
+<p>You should be aware that it is not technologically possible to remove each and every record of the information you have provided to us from our system. The need to back up our systems to protect information from inadvertent loss means that a copy of your information may exist in a non-erasable form that will be difficult or impossible for us to locate. Promptly after receiving your request, all personal information stored in databases we actively use, and other readily searchable media will be updated, corrected, changed or deleted, as appropriate, as soon as and to the extent reasonably and technically practicable.</p>
+
+<p>If you are an end user and wish to update, delete, or receive any information we have about you, you may do so by contacting the organization of which you are a customer.</p>
+
+<h2>Sale of Business</h2>
+
+<p>We reserve the right to transfer information to a third party in the event of a sale, merger or other transfer of all or substantially all of the assets of FlowableAI or any of its Corporate Affiliates (as defined herein), or that portion of FlowableAI or any of its Corporate Affiliates to which the Service relates, or in the event that we discontinue our business or file a petition or have filed against us a petition in bankruptcy, reorganization or similar proceeding, provided that the third party agrees to adhere to the terms of this Privacy Policy.</p>
+
+<h2>Affiliates</h2>
+
+<p>We may disclose information (including personal information) about you to our Corporate Affiliates. For purposes of this Privacy Policy, &ldquo;Corporate Affiliate&rdquo; means any person or entity which directly or indirectly controls, is controlled by or is under common control with FlowableAI, whether by ownership or otherwise. Any information relating to you that we provide to our Corporate Affiliates will be treated by those Corporate Affiliates in accordance with the terms of this Privacy Policy.</p>
+
+<h2>Governing Law</h2>
+
+<p>This Privacy Policy is governed by the laws of Canada without regard to its conflict of laws provision. You consent to the exclusive jurisdiction of the courts in connection with any action or dispute arising between the parties under or in connection with this Privacy Policy.</p>
+
+<p>The laws of Canada, excluding its conflicts of law rules, shall govern this Agreement and your use of the website. Your use of the website may also be subject to other local, state, national, or international laws. Where required by applicable law, cross-border data transfers will be conducted in accordance with recognized legal mechanisms and frameworks in effect at the time of transfer.</p>
+
+<p>By using FlowableAI or contacting us directly, you signify your acceptance of this Privacy Policy. If you do not agree to this Privacy Policy, you should not engage with our website, or use our services. Continued use of the website, direct engagement with us, or following the posting of changes to this Privacy Policy that do not significantly affect the use or disclosure of your personal information will mean that you accept those changes.</p>
+
+<h2>Your Consent</h2>
+
+<p>We&rsquo;ve updated our Privacy Policy to provide you with complete transparency into what is being set when you visit our site and how it&rsquo;s being used. By submitting a consultation request form on our website and checking the acknowledgment box confirming your agreement, you hereby consent to our Privacy Policy and agree to its terms.</p>
+
+<h2>Links to Other Websites</h2>
+
+<p>This Privacy Policy applies only to the Services. The Services may contain links to other websites not operated or controlled by FlowableAI. We are not responsible for the content, accuracy or opinions expressed in such websites, and such websites are not investigated, monitored or checked for accuracy or completeness by us. Please remember that when you use a link to go from the Services to another website, our Privacy Policy is no longer in effect. Your browsing and interaction on any other website, including those that have a link on our platform, is subject to that website&rsquo;s own rules and policies. Such third parties may use their own cookies or other methods to collect information about you.</p>
+
+<h2>Cookies</h2>
+
+<p>FlowableAI uses &ldquo;Cookies&rdquo; to identify the areas of our website that you have visited. A Cookie is a small piece of data stored on your computer or mobile device by your web browser. We use Cookies to enhance the performance and functionality of our website but are non-essential to their use. However, without these cookies, certain functionality like videos may become unavailable or you would be required to enter your login details every time you visit the website as we would not be able to remember that you had logged in previously. Most web browsers can be set to disable the use of Cookies. However, if you disable Cookies, you may not be able to access functionality on our website correctly or at all. We never place Personally Identifiable Information in Cookies.</p>
+
+<h3>Blocking and disabling cookies and similar technologies</h3>
+
+<p>Wherever you&rsquo;re located you may also set your browser to block cookies and similar technologies, but this action may block our essential cookies and prevent our website from functioning properly, and you may not be able to fully utilize all of its features and services. You should also be aware that you may also lose some saved information (e.g. saved login details, site preferences) if you block cookies on your browser. Different browsers make different controls available to you. Disabling a cookie or category of cookie does not delete the cookie from your browser, you will need to do this yourself from within your browser, you should visit your browser&rsquo;s help menu for more information.</p>
+
+<h2>Remarketing Services</h2>
+
+<p>We use remarketing services. What Is Remarketing? In digital marketing, remarketing (or retargeting) is the practice of serving ads across the internet to people who have already visited your website. It allows your company to seem like they&rsquo;re &ldquo;following&rdquo; people around the internet by serving ads on the websites and platforms they use most. Remarketing never uses Google user data.</p>
+
+<h2>Kids&rsquo; Privacy</h2>
+
+<p>FlowableAI does not direct its services to minors. We do not knowingly collect personally identifiable information from anyone under the age of 13. In jurisdictions where applicable law sets a higher minimum age &mdash; including certain Canadian provinces where the threshold may be 14 or higher &mdash; we apply that higher standard. If you are a parent or guardian and you are aware that your child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from a minor without verification of parental consent where required, we will take steps to remove that information from our servers.</p>
+
+<h2>Compliance with Canadian Privacy Law (PIPEDA)</h2>
+
+<p>FlowableAI is based in Canada and is subject to the Personal Information Protection and Electronic Documents Act (PIPEDA), the federal privacy law governing how private sector organizations collect, use, and disclose personal information in the course of commercial activities.</p>
+
+<p>Under PIPEDA, FlowableAI is committed to the following principles:</p>
+
+<ul>
+<li><strong>Accountability:</strong> FlowableAI is responsible for the personal information under its control and has designated personnel accountable for compliance with these principles.</li>
+<li><strong>Identifying Purposes:</strong> The purposes for which personal information is collected will be identified at or before the time of collection.</li>
+<li><strong>Consent:</strong> The knowledge and consent of the individual are required for the collection, use, or disclosure of personal information, except where inappropriate.</li>
+<li><strong>Limiting Collection:</strong> The collection of personal information will be limited to that which is necessary for the purposes identified.</li>
+<li><strong>Limiting Use, Disclosure, and Retention:</strong> Personal information will not be used or disclosed for purposes other than those for which it was collected, and will be retained only as long as necessary.</li>
+<li><strong>Accuracy:</strong> Personal information will be as accurate, complete, and up-to-date as is necessary for the purposes for which it is to be used.</li>
+<li><strong>Safeguards:</strong> Personal information will be protected by security safeguards appropriate to the sensitivity of the information.</li>
+<li><strong>Openness:</strong> FlowableAI will make its policies and practices relating to the management of personal information readily available.</li>
+<li><strong>Individual Access:</strong> Upon request, individuals will be informed of the existence, use, and disclosure of their personal information and will be given access to that information.</li>
+<li><strong>Challenging Compliance:</strong> Individuals may address a challenge concerning compliance with the above principles to FlowableAI&rsquo;s designated privacy contact.</li>
+</ul>
+
+<p>If you have questions or concerns about how your personal information is handled under PIPEDA, please contact us at <a href="mailto:FlowableAI@gmail.com">FlowableAI@gmail.com</a>.</p>
+
+<h2>Changes To Our Privacy Policy</h2>
+
+<p>We may change our Service and policies, and we may need to make changes to this Privacy Policy so that they accurately reflect our Service and policies. Unless otherwise required by law, we will notify you (for example, through our Service) before we make changes to this Privacy Policy and give you an opportunity to review them before they go into effect. Then, if you continue to use the Service, you will be bound by the updated Privacy Policy. If you do not want to agree to this or any updated Privacy Policy, you can delete your account.</p>
+
+<h2>Information about General Data Protection Regulation (GDPR)</h2>
+
+<p>We may be collecting and using information from you if you are from the European Economic Area (EEA), and in this section of our Privacy Policy we are going to explain exactly how and why is this data collected, and how we maintain this data under protection from being replicated or used in the wrong way.</p>
+
+<h3>What is GDPR?</h3>
+
+<p>GDPR is an EU-wide privacy and data protection law that regulates how EU residents&rsquo; data is protected by companies and enhances the control the EU residents have over their personal data. The GDPR is relevant to any globally operating company and not just the EU-based businesses and EU residents. Our customers&rsquo; data is important irrespective of where they are located, which is why we have implemented GDPR controls as our baseline standard for all our operations worldwide.</p>
+
+<h3>What is personal data?</h3>
+
+<p>Any data that relates to an identifiable or identified individual. GDPR covers a broad spectrum of information that could be used on its own, or in combination with other pieces of information, to identify a person. Personal data extends beyond a person&rsquo;s name or email address. Some examples include financial information, political opinions, genetic data, biometric data, IP addresses, physical address, sexual orientation, and ethnicity.</p>
+
+<p>The Data Protection Principles include requirements such as:</p>
+
+<ul>
+<li>Personal data collected must be processed in a fair, legal, and transparent way and should only be used in a way that a person would reasonably expect.</li>
+<li>Personal data should only be collected to fulfil a specific purpose and it should only be used for that purpose. Organizations must specify why they need the personal data when they collect it.</li>
+<li>Personal data should be held no longer than necessary to fulfil its purpose.</li>
+<li>People covered by the GDPR have the right to access their own personal data. They can also request a copy of their data, and that their data be updated, deleted, restricted, or moved to another organization.</li>
+</ul>
+
+<h3>Why is GDPR important?</h3>
+
+<p>GDPR adds some new requirements regarding how companies should protect individuals&rsquo; personal data that they collect and process. It also raises the stakes for compliance by increasing enforcement and imposing greater fines for breach. Beyond these facts it&rsquo;s simply the right thing to do. At FlowableAI we strongly believe that your data privacy is very important and we already have solid security and privacy practices in place that go beyond the requirements of this new regulation.</p>
+
+<h3>Individual Data Subject&rsquo;s Rights &mdash; Data Access, Portability and Deletion</h3>
+
+<p>We are committed to helping our customers meet the data subject rights requirements of GDPR. FlowableAI processes or stores all personal data in fully vetted, DPA compliant vendors. We do store all conversation and personal data for up to 6 years unless your account is deleted. In which case, we dispose of all data in accordance with our Terms of Service and Privacy Policy, but we will not hold it longer than 60 days.</p>
+
+<p>We are aware that if you are working with EU customers, you need to be able to provide them with the ability to access, update, retrieve and remove personal data. Our customer support team is here for you to answer any questions you might have about working with the API.</p>
+
+<h2>California Residents</h2>
+
+<p>The California Consumer Privacy Act (CCPA) requires us to disclose categories of Personal Information we collect and how we use it, the categories of sources from whom we collect Personal Information, and the third parties with whom we share it, which we have explained above.</p>
+
+<p>We are also required to communicate information about rights California residents have under California law. You may exercise the following rights:</p>
+
+<ul>
+<li><strong>Right to Know and Access.</strong> You may submit a verifiable request for information regarding the: (1) categories of Personal Information we collect, use, or share; (2) purposes for which categories of Personal Information are collected or used by us; (3) categories of sources from which we collect Personal Information; and (4) specific pieces of Personal Information we have collected about you.</li>
+<li><strong>Right to Equal Service.</strong> We will not discriminate against you if you exercise your privacy rights.</li>
+<li><strong>Right to Delete.</strong> You may submit a verifiable request to close your account and we will delete Personal Information about you that we have collected.</li>
+<li>Request that a business that sells a consumer&rsquo;s personal data, not sell the consumer&rsquo;s personal data.</li>
+</ul>
+
+<p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+<p>We do not sell the Personal Information of our users.</p>
+
+<h2>California Online Privacy Protection Act (CalOPPA)</h2>
+
+<p>CalOPPA requires us to disclose categories of Personal Information we collect and how we use it, the categories of sources from whom we collect Personal Information, and the third parties with whom we share it, which we have explained above.</p>
+
+<p>CalOPPA users have the following rights:</p>
+
+<ul>
+<li><strong>Right to Know and Access.</strong> You may submit a verifiable request for information regarding the: (1) categories of Personal Information we collect, use, or share; (2) purposes for which categories of Personal Information are collected or used by us; (3) categories of sources from which we collect Personal Information; and (4) specific pieces of Personal Information we have collected about you.</li>
+<li><strong>Right to Equal Service.</strong> We will not discriminate against you if you exercise your privacy rights.</li>
+<li><strong>Right to Delete.</strong> You may submit a verifiable request to close your account and we will delete Personal Information about you that we have collected.</li>
+<li>Right to request that a business that sells a consumer&rsquo;s personal data, not sell the consumer&rsquo;s personal data.</li>
+</ul>
+
+<p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+<p>We do not sell the Personal Information of our users.</p>
+
+<h2>Third-Party Services</h2>
+
+<p>We may display, include or make available third-party content (including data, information, applications and other products services) or provide links to third-party websites or services (&ldquo;Third-Party Services&rdquo;).</p>
+
+<p>You acknowledge and agree that FlowableAI shall not be responsible for any Third-Party Services, including their accuracy, completeness, timeliness, validity, copyright compliance, legality, decency, quality or any other aspect thereof. FlowableAI does not assume and shall not have any liability or responsibility to you or any other person or entity for any Third-Party Services.</p>
+
+<p>Third-Party Services and links thereto are provided solely as a convenience to you and you access and use them entirely at your own risk and subject to such third parties&rsquo; terms and conditions.</p>
+
+<h2 id="contact">Contact Us</h2>
+
+<p>Don&rsquo;t hesitate to contact us if you have any questions.</p>
+
+<p>Via Email: <a href="mailto:FlowableAI@gmail.com">FlowableAI@gmail.com</a></p>
+</article>
+</div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="./#how">How we work</a></li>
+          <li><a href="./#solutions">Solutions</a></li>
+          <li><a href="./#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:FlowableAI@gmail.com">FlowableAI@gmail.com</a></li>
+          <li>Calgary, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 FlowableAI. All rights reserved.</span>
+      <a class="social" href="https://www.instagram.com/flowableai/" target="_blank" rel="noopener noreferrer" aria-label="FlowableAI on Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

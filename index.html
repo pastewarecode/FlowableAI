@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowableAI | AI Automation for Service Businesses</title>
+<meta name="description" content="FlowableAI builds AI systems that answer every lead, book jobs automatically, and take repetitive admin off your plate. Based in Calgary, Alberta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome brand icons (used for the Instagram link in the footer) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/brands.min.css">
+<style>
+  :root {
+    --bg: #232323;
+    --bg-band: #282828;
+    --bg-deep: #1c1c1c;
+    --text: #FFFFFF;
+    --muted: rgba(255, 255, 255, 0.70);
+    --faint: rgba(255, 255, 255, 0.45);
+    --line: rgba(255, 255, 255, 0.10);
+    --accent: #E27E36;
+    --accent-soft: rgba(226, 126, 54, 0.14);
+    --card: #FFFFFF;
+    --card-text: #232323;
+    --card-muted: #5c5c5c;
+    --radius: 14px;
+    --serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+    --sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  section[id] { scroll-margin-top: 80px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--sans); font-weight: 600; font-size: 15px;
+    text-decoration: none; border-radius: 999px;
+    padding: 14px 26px; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary { background: var(--accent); color: var(--card-text); box-shadow: 0 8px 24px rgba(226, 126, 54, 0.28); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(226, 126, 54, 0.38); }
+  .btn-ghost { color: var(--text); padding-left: 6px; padding-right: 6px; }
+  .btn-ghost:hover { color: var(--accent); }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(35, 35, 35, 0.85);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-family: "Poppins", var(--sans);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: var(--serif); font-size: 26px; line-height: 1; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
+  .brand span { color: var(--accent); }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a.link { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+  nav a.link:hover { color: var(--text); }
+  .nav-cta {
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    color: var(--accent); border: 1.5px solid var(--accent);
+    padding: 8px 18px; border-radius: 999px; transition: background .15s ease, color .15s ease;
+  }
+  .nav-cta:hover { background: var(--accent); color: var(--card-text); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(60% 70% at 85% 10%, rgba(226, 126, 54, 0.24) 0%, rgba(226, 126, 54, 0) 70%),
+      radial-gradient(45% 60% at 0% 100%, rgba(226, 126, 54, 0.10) 0%, rgba(226, 126, 54, 0) 70%),
+      linear-gradient(180deg, #232323 0%, #1c1c1c 100%);
+    padding: 96px 0 104px;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 22px;
+  }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 48px; line-height: 1.12; letter-spacing: -0.01em;
+    margin: 0 0 22px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .sub { font-size: 18px; color: var(--muted); max-width: 540px; margin: 0 0 34px; }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .hero-note { margin: 28px 0 0; font-size: 14px; color: var(--faint); display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  .hero-note span { display: inline-flex; align-items: center; gap: 8px; }
+  .hero-note svg { width: 15px; height: 15px; color: var(--accent); flex: none; }
+
+  /* Example conversation card */
+  .chat {
+    background: var(--card); color: var(--card-text);
+    border-radius: 20px; padding: 22px 20px 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    max-width: 380px; justify-self: end; width: 100%;
+  }
+  .chat-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #ececec; }
+  .chat-head strong { font-size: 14px; font-weight: 600; }
+  .chat-head small { font-size: 12px; color: var(--card-muted); }
+  .chat-tag { font-size: 11px; font-weight: 600; color: var(--accent); background: rgba(226, 126, 54, 0.12); padding: 3px 10px; border-radius: 999px; }
+  .bubble { font-size: 14px; line-height: 1.5; padding: 10px 14px; border-radius: 16px; max-width: 85%; margin-bottom: 10px; }
+  .bubble.in { background: #f1f1f1; border-bottom-left-radius: 4px; }
+  .bubble.out { background: var(--card-text); color: var(--text); margin-left: auto; border-bottom-right-radius: 4px; }
+  .chat-foot { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 10px 12px; border-radius: 10px; background: rgba(226, 126, 54, 0.10); font-size: 13px; font-weight: 500; }
+  .chat-foot svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
+
+  /* ---------- Sections ---------- */
+  .section { padding: 96px 0; }
+  .section.band { background: var(--bg-band); }
+  .section-head { max-width: 640px; margin: 0 0 52px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.15; margin: 0 0 14px; }
+  .section-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+  /* How we work */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; }
+  .step { position: relative; padding: 28px 24px 26px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 255, 255, 0.02); }
+  .step-num { font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--accent); margin-bottom: 18px; }
+  .step h3 { font-size: 17px; font-weight: 600; margin: 0 0 8px; }
+  .step p { margin: 0; font-size: 14.5px; color: var(--muted); }
+  .step-time { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 500; color: var(--faint); letter-spacing: 0.02em; }
+
+  /* Fit */
+  .fit { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
+  .fit-card { border-radius: var(--radius); padding: 36px 34px; }
+  .fit-card.yes { background: var(--card); color: var(--card-text); }
+  .fit-card.no { border: 1px solid var(--line); }
+  .fit-card h3 { font-size: 19px; font-weight: 600; margin: 0 0 20px; }
+  .fit-card ul { list-style: none; margin: 0; padding: 0; }
+  .fit-card li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; font-size: 15.5px; }
+  .fit-card li:last-child { margin-bottom: 0; }
+  .fit-card li svg { width: 22px; height: 22px; flex: none; margin-top: 1px; }
+  .fit-card.yes li svg { color: var(--accent); }
+  .fit-card.no li { color: var(--muted); }
+  .fit-card.no li svg { color: var(--faint); }
+
+  /* Solutions */
+  .solutions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .solution { background: var(--card); color: var(--card-text); border-radius: var(--radius); padding: 32px 28px 28px; display: flex; flex-direction: column; transition: transform .2s ease; }
+  .solution:hover { transform: translateY(-3px); }
+  .icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(226, 126, 54, 0.12); color: var(--accent); display: grid; place-items: center; margin-bottom: 22px; }
+  .icon svg { width: 24px; height: 24px; }
+  .solution h3 { font-size: 19px; font-weight: 600; margin: 0 0 10px; }
+  .solution p { font-size: 15px; color: var(--card-muted); margin: 0 0 22px; flex: 1; }
+  .outcome { font-size: 13px; font-weight: 600; color: var(--card-text); padding-top: 16px; border-top: 1px solid #ececec; display: flex; align-items: center; gap: 8px; }
+  .outcome::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* Final CTA */
+  .cta-final { padding: 40px 0 96px; }
+  .cta-box {
+    position: relative; overflow: hidden; text-align: center;
+    border-radius: 24px; padding: 80px 32px;
+    background:
+      radial-gradient(70% 90% at 50% 0%, rgba(226, 126, 54, 0.30) 0%, rgba(226, 126, 54, 0) 70%),
+      linear-gradient(180deg, #2c2c2c 0%, #1c1c1c 100%);
+    border: 1px solid rgba(226, 126, 54, 0.25);
+  }
+  .cta-box h2 { font-size: 44px; max-width: 680px; margin: 0 auto 16px; }
+  .cta-box p { color: var(--muted); max-width: 560px; margin: 0 auto 34px; font-size: 17px; }
+  .cta-box .alt { margin: 22px auto 0; font-size: 14px; color: var(--faint); }
+  .cta-box .alt a { color: var(--text); }
+
+  /* FAQ */
+  .faq { max-width: 780px; margin: 0 auto; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq details:first-child { border-top: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    padding: 22px 4px; font-size: 17px; font-weight: 500;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:hover { color: var(--accent); }
+  .faq .plus { position: relative; width: 18px; height: 18px; flex: none; }
+  .faq .plus::before, .faq .plus::after { content: ""; position: absolute; background: var(--accent); border-radius: 2px; transition: transform .2s ease; }
+  .faq .plus::before { left: 0; right: 0; top: 8px; height: 2px; }
+  .faq .plus::after { top: 0; bottom: 0; left: 8px; width: 2px; }
+  .faq details[open] .plus::after { transform: scaleY(0); }
+  .faq .answer { padding: 0 44px 24px 4px; color: var(--muted); font-size: 15.5px; }
+  .faq .answer p { margin: 0 0 12px; }
+  .faq .answer ul { margin: 0 0 12px; padding-left: 20px; }
+  .faq .answer li { margin-bottom: 6px; }
+  .faq .answer li::marker { color: var(--accent); }
+  .faq .answer > :last-child { margin-bottom: 0; }
+  .faq .answer a { color: var(--accent); }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); background: var(--bg-deep); padding: 56px 0 36px; font-size: 14px; color: var(--muted); }
+  .foot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 240px)); gap: 32px 64px; margin-bottom: 40px; }
+  .foot-grid h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); margin: 0 0 14px; }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; }
+  .foot-grid li { margin-bottom: 8px; }
+  .foot-grid a { text-decoration: none; color: var(--muted); }
+  .foot-grid a:hover { color: var(--accent); }
+  .foot-bottom { border-top: 1px solid var(--line); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--faint); font-size: 13px; }
+  .social {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); color: var(--muted); text-decoration: none;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .social:hover { color: var(--accent); border-color: var(--accent); }
+  .social i { font-size: 17px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .chat { justify-self: start; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .solutions { grid-template-columns: 1fr; max-width: 560px; }
+    .fit { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    nav a.link { display: none; }
+    .hero { padding: 64px 0 72px; }
+    .hero h1 { font-size: 38px; }
+    .hero .sub { font-size: 16.5px; }
+    .section { padding: 72px 0; }
+    h2 { font-size: 31px; }
+    .cta-box { padding: 56px 22px; }
+    .cta-box h2 { font-size: 32px; }
+    .fit-card { padding: 28px 24px; }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .steps { grid-template-columns: 1fr; }
+    .brand { font-size: 23px; }
+    .nav-cta { padding: 7px 14px; font-size: 13px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="FlowableAI home">Flowable<span>AI</span></a>
+    <nav aria-label="Main">
+      <a class="link" href="#how">How we work</a>
+      <a class="link" href="#solutions">Solutions</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://calendly.com/flowableai/discovery-call" target="_blank" rel="noopener noreferrer">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">AI automation for service businesses</p>
+      <h1>Every lead answered.<br>Every job <em>booked.</em></h1>
+      <p class="sub">FlowableAI builds AI systems that reply to customers in seconds, book appointments automatically, and take repetitive admin off your plate, so you can focus on the work that pays.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://calendly.com/flowableai/discovery-call" target="_blank" rel="noopener noreferrer">
+          Book a free discovery call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <p class="hero-note">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Works with the tools you already use</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most projects live within 3 weeks</span>
+      </p>
+    </div>
+
+    <div class="chat" role="img" aria-label="Example: a customer texts at 9:47 PM about a broken furnace and the AI assistant books a 2 PM appointment for the next day.">
+      <div class="chat-head">
+        <div><strong>Customer text</strong><br><small>Tuesday, 9:47 PM</small></div>
+        <span class="chat-tag">Example</span>
+      </div>
+      <div class="bubble in">Hi, our furnace stopped working. Can someone come out tomorrow?</div>
+      <div class="bubble out">Sorry to hear that! We have openings tomorrow at 10:00 AM or 2:00 PM. Which works better?</div>
+      <div class="bubble in">2 works</div>
+      <div class="bubble out">You're booked for 2:00 PM tomorrow. You'll receive a reminder in the morning.</div>
+      <div class="chat-foot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4"/></svg>
+        Job added to your calendar, after hours
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW WE WORK ================= -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">How we work</div>
+      <h2>Problem first. Technology second.</h2>
+      <p>We start by finding where your business loses time and leads, then build only what fixes it.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Discovery call</h3>
+        <p>We learn how your business runs and pinpoint where calls, leads, and hours slip through the cracks.</p>
+        <span class="step-time">Free, no obligation</span>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Design</h3>
+        <p>We map the workflow and show you exactly what will be built and what it will change, before any work starts.</p>
+        <span class="step-time">Week 1</span>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Build and test</h3>
+        <p>We build the system around your existing tools and test it against real scenarios from your business.</p>
+        <span class="step-time">Week 2</span>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Launch and improve</h3>
+        <p>We launch, train your team, and stay on as your long-term AI partner, not a vendor who builds it and walks away.</p>
+        <span class="step-time">Week 3 onward</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IS THIS RIGHT FOR YOU ================= -->
+<section class="section band" id="fit">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">Is this right for you?</div>
+      <h2>Built for busy owners, not tech teams.</h2>
+      <p>Our clients are great at their trade. They just don't have time to answer every message, chase every lead, and do the paperwork too.</p>
+    </div>
+    <div class="fit">
+      <div class="fit-card yes">
+        <h3>We're a great fit if you&hellip;</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>Miss calls or messages while you're on a job or after hours</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>Follow up with leads by hand, or don't get to it at all</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>Track customers in spreadsheets, notebooks, or your head</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>Are growing, but admin is eating into billable time</li>
+        </ul>
+      </div>
+      <div class="fit-card no">
+        <h3>Probably not yet if you&hellip;</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 6M15 9l-6 6"/></svg>Don't have steady customer demand yet</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 6M15 9l-6 6"/></svg>Want an off-the-shelf chatbot rather than a system built around your business</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 6M15 9l-6 6"/></svg>Aren't open to changing how leads are handled today</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR SOLUTIONS ================= -->
+<section class="section" id="solutions">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">Our solutions</div>
+      <h2>Three ways we save you time and win you work.</h2>
+      <p>Every system is custom-built for your business and tied to a result you can measure.</p>
+    </div>
+    <div class="solutions">
+      <div class="solution">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg></div>
+        <h3>AI receptionist and booking</h3>
+        <p>Answers calls and texts 24/7, understands what the customer needs, and books the job straight into your calendar.</p>
+        <div class="outcome">Fewer missed jobs</div>
+      </div>
+      <div class="solution">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+        <h3>Lead generation</h3>
+        <p>Finds and qualifies new prospects in your area automatically, then delivers them organized and ready for outreach.</p>
+        <div class="outcome">More qualified leads</div>
+      </div>
+      <div class="solution">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h4a3 3 0 0 1 3 3v6"/><path d="M13.5 12.5L16 15l2.5-2.5"/></svg></div>
+        <h3>Workflow automation</h3>
+        <p>Connects your tools and takes over repetitive admin like data entry, reminders, and follow-ups.</p>
+        <div class="outcome">Hours back every week</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTEGRATE AI SOLUTIONS (FINAL CTA) ================= -->
+<section class="cta-final" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="label">Integrate AI solutions</div>
+      <h2>Ready to stop losing leads to a busy phone?</h2>
+      <p>Book a free discovery call. We'll find where your business is losing time and leads, and show you what's worth automating. No obligation.</p>
+      <a class="btn btn-primary" href="https://calendly.com/flowableai/discovery-call" target="_blank" rel="noopener noreferrer">
+        Book a free discovery call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <p class="alt">Prefer email? Reach us at <a href="mailto:FlowableAI@gmail.com">FlowableAI@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section band" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="label">FAQ</div>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>How much does it cost?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">
+          <p>Our pricing depends on the scope and complexity of the systems we're implementing. We confirm exact pricing after the discovery call, once we understand your workflows, tools, and goals.</p>
+          <p>Pricing includes a one-time setup fee, with a monthly retainer fee to maintain and monitor the system.</p>
+          <p>If there isn't a clear return on investment, we won't recommend moving forward.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do I need to change the tools I already use?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer"><p>Usually not. We build around your existing phone number, calendar, CRM, and spreadsheets wherever possible.</p></div>
+      </details>
+      <details>
+        <summary>What happens if the AI can't answer a customer?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer"><p>It hands the conversation to you. Anything unusual, urgent, or sensitive is passed to a real person, so customers are never left stuck.</p></div>
+      </details>
+      <details>
+        <summary>Do I need to be technical?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer"><p>Not at all. We handle the setup and train your team. Day to day, you just see booked jobs and organized leads.</p></div>
+      </details>
+      <details>
+        <summary>How is my customer data handled?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer"><p>Each system only accesses the data it needs to run, and we never sell your data. See our <a href="privacy.html">Privacy Policy</a> for full details.</p></div>
+      </details>
+      <details>
+        <summary>Do you only work with businesses in Calgary?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer"><p>We're based in Calgary, Alberta, and work with businesses across Canada and the United States.</p></div>
+      </details>
+      <details>
+        <summary>What should I prepare before the session?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">
+          <p>Before the session, it helps to:</p>
+          <ul>
+            <li>Have a general overview of your current processes and tools</li>
+            <li>Know where things feel manual, slow, or disorganized</li>
+            <li>Be clear on your goals (saving time, increasing conversions, scaling, etc.)</li>
+          </ul>
+          <p>No technical prep is required &mdash; we'll guide the conversation and ask the right questions.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Can I reschedule my appointment?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">
+          <p>Yes &mdash; you can reschedule your appointment using the link included in your booking confirmation email.</p>
+          <p>We ask that any changes be made at least 24 hours in advance so we can ensure smooth scheduling for all clients.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#how">How we work</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:FlowableAI@gmail.com">FlowableAI@gmail.com</a></li>
+          <li>Calgary, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 FlowableAI. All rights reserved.</span>
+      <a class="social" href="https://www.instagram.com/flowableai/" target="_blank" rel="noopener noreferrer" aria-label="FlowableAI on Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
